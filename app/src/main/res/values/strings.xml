@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">快拍</string>
+    <string name="loading">Loading…</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_videoedit">VideoeditActivity</string>
+    <string name="camera_video_format_error">play error</string>
+    <string name="tip_welcome">Welcome to Koolmeo!</string>
+    <string name="tip_shoot_video">Shoot a video here</string>
+    <string name="video_uploading">视频正在上传</string>
+
+    <string name="camera_takevideo">Please shoot the video</string>
+    <string name="camera_finish">Next</string>
+    <string name="camera_record">video is recording</string>
+    <string name="camera_droptitle">确定要退出吗?</string>
+    <string name="camera_dropcontent">如果退出，视频将不会被保存！</string>
+    <string name="camera_cancel">取消</string>
+    <string name="camera_ok">确定</string>
+    <string name="camera_permission">请打开摄像权限</string>
+    <string name="audio_permission">Please get permission to record</string>
+    <string name="video_manage_activity_video_count">视频</string>
+    <string name="you_do_not_have_not_upload_the_video">您没有未上传的视频</string>
+    <string name="video_manage_activity_cancel_all">取消所有</string>
+    <string name="video_manage_activity_select_all">全选</string>
+    <string name="feedback_activity_edit_hint_text">请填写您的意见和反馈。我们定会虚心接受，不断改进 </string>
+    <string name="feedback_activity_edit_mail">您的联系方式(邮箱或电话)</string>
+    <string name="feedback_activity_send_bloag_text">同意发送日子</string>
+    <string name="feedback_activity_commit_text">提交反馈</string>
+    <string name="feedback_activity_title">反馈</string>
+</resources>

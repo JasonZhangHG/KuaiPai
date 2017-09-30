@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.koolmeo.view.CustomVideoView
+        android:id="@+id/CustomVideoViewShareActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:clickable="true"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/works_info_fragment_head_shade"/>
+
+
+    <RelativeLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:id="@+id/tvBackShareActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:text="返回"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvFinishShareActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:text="完成"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/descriptionShareActivity"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="10dp"
+        android:background="@null"
+        android:gravity="top|start"
+        android:hint="说点什么吧..."
+        android:padding="5dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"/>
+    <com.example.koolmeo.view.FlikerProgressBar
+        android:id="@+id/flikerBarShareActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:textSize="12sp"
+        app:stopColor="#ff9800"
+        app:loadingColor="#40c4ff"
+        app:radius="20dp"
+        android:visibility="gone"
+        android:layout_marginTop="76dp"/>
+
+</FrameLayout>

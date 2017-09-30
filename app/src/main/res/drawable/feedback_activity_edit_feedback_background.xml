@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+ <item android:state_checked="false">
+    <shape >
+        <corners
+            android:topRightRadius="3dp"
+            android:bottomRightRadius="3dp"
+            android:topLeftRadius="3dp"
+            android:bottomLeftRadius="3dp"/>
+        <stroke
+            android:width="0.5dp"
+            android:color="@color/feedback_activity_edit_stroke_color"/>
+    </shape>
+ </item>
+</selector>

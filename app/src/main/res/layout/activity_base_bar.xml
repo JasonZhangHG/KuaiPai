@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rlBase">
+
+    <include android:id="@id/barTitle" layout="@layout/base_bar_title"/>
+
+    <include
+        android:id="@id/baseLine"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@id/barTitle"
+        layout="@layout/base_line"/>
+
+
+    <ViewStub
+        android:id="@id/baseContent"
+        android:layout_below="@id/baseLine"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

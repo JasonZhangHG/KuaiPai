@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name ="background">#000000</color>
+    <color name="list_qualities_bg">#88FFFFFF</color>
+    <color name="black_shade">#00000000</color>
+    <color name="works_info_fragment_shade">#99000000</color>
+    <color name="gray">#eeee</color>
+
+    <color name="colorPrimary">@color/white</color>
+    <color name="colorPrimaryDark">@color/white</color>
+    <color name="colorAccent">@color/white</color>
+    <color name="base_bar_action">#FF4D73FF</color>
+    <color name="user_activity_tab_selected_number_color">#FFffb300</color>
+    <color name="user_activity_tab_selected_text_color">#8fffb300</color>
+    <color name="user_activity_collapsing__toolbar_layout_contentScrim">#88ffffff</color>
+    <color name="com_facebook_blue">#ff3b5998</color>
+    <color name="com_facebook_button_background_color">#ff415dae</color>
+    <color name="com_facebook_button_background_color_disabled">#ffbdc1c9</color>
+    <color name="com_facebook_button_background_color_pressed">#ff2f477a</color>
+    <color name="com_facebook_button_login_silver_background_color">#fff4f6f8</color>
+    <color name="com_facebook_button_login_silver_background_color_pressed">#ffe9eaf0</color>
+    <color name="com_facebook_button_send_background_color">#ff0084ff</color>
+    <color name="com_facebook_button_send_background_color_pressed">#ff006fff</color>
+    <color name="com_facebook_likeboxcountview_border_color">#ff6a7180</color>
+    <color name="com_facebook_likeboxcountview_text_color">#ff6a7180</color>
+    <color name="com_facebook_likeview_text_color">#ff6a7180</color>
+    <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
+    <color name="dim_foreground_disabled_material_light">#80323232</color>
+    <color name="dim_foreground_material_dark">#ffbebebe</color>
+    <color name="dim_foreground_material_light">#ff323232</color>
+    <color name="highlighted_text_material_dark">#6680cbc4</color>
+    <color name="highlighted_text_material_light">#66009688</color>
+    <color name="material_blue_grey_800">#ff37474f</color>
+    <color name="material_blue_grey_900">#ff263238</color>
+    <color name="material_blue_grey_950">#ff21272b</color>
+    <color name="material_deep_teal_200">#ff80cbc4</color>
+    <color name="material_deep_teal_500">#ff009688</color>
+    <color name="primary_dark_material_dark">#353535</color>
+    <color name="primary_dark_material_light">#ff757575</color>
+    <color name="primary_material_dark">#ff212121</color>
+    <color name="primary_material_light">#ffefefef</color>
+    <color name="feedback_activity_commit_background_color">#FFDD191D</color>
+    <color name="login_facebook_pressed">#DD3459E1</color>
+    <color name="login_facebook_normal">#DD4D73FF</color>
+    <color name="login_google_pressed">#FFB43D2F</color>
+    <color name="login_google_normal">#FFD85040</color>
+    <color name="logout_normal">#FFDD191D</color>
+    <color name="red_light">#ffff4444</color>
+    <color name="red_deep">#FFBF124D</color>
+    <color name="media_manage_activity_select">#ffb3b3b3</color>
+    <color name="works_info_fragment_attention_background">#00ffffff</color>
+    <color name="empty_page_text_color">#B2B2B2</color>
+    <color name="recyclerview_bg_color">#eeee</color>
+    <color name="video_manage_uploading_text_color">#9E9E9E</color>
+    <color name="video_manage_activity_select_all_text_color">#FFB300</color>
+    <color name="album_bg_color">#D8D8D8</color>
+    <color name="update_music_bg">#AB2C2C2C</color>
+
+    <!--不透明度黑白-->
+    <color name="white">#FFFFFF</color>
+    <color name="white10">#19ffffff</color>
+    <color name="white20">#33ffffff</color>
+    <color name="white30">#4cffffff</color>
+    <color name="white40">#66ffffff</color>
+    <color name="white44">#70ffffff</color>
+    <color name="white50">#7fffffff</color>
+    <color name="white60">#99ffffff</color>
+    <color name="white70">#b2ffffff</color>
+    <color name="white80">#ccffffff</color>
+    <color name="white86">#deffffff</color>
+    <color name="white90">#e5ffffff</color>
+
+
+    <color name="black">#000000</color>
+    <color name="black10">#19000000</color>
+    <color name="black12">#1f000000</color>
+    <color name="black20">#33000000</color>
+    <color name="black24">#3D000000</color>
+    <color name="black30">#4c000000</color>
+    <color name="black35">#59000000</color>
+    <color name="black40">#66000000</color>
+    <color name="black47">#7a000000</color>
+    <color name="black50">#7f000000</color>
+    <color name="black52">#85000000</color>
+    <color name="black56">#8f000000</color>
+    <color name="black60">#99000000</color>
+    <color name="black63">#a3000000</color>
+    <color name="black70">#b2000000</color>
+    <color name="black80">#cc000000</color>
+    <color name="black85">#d9000000</color>
+    <color name="black87">#DE000000</color>
+    <color name="black90">#e5000000</color>
+
+    <color name="main_activity_drawer_text_color">#FF404040</color>
+    <color name="attention_others_activity_log_in_text_color">#FF4D73FF</color>
+    <color name="video_manage_activity_video_count_text_color">#de000000</color>
+    <color name="line_color">#1f000000</color>
+    <color name="image_cover_color">#4c000000</color>
+    <color name="base_bar_title">#de000000</color>
+    <color name="feedback_activity_edit_stroke_color">#1f000000</color>
+    <color name="feedback_activity_send_bloag_text_color">#7a000000</color>
+
+</resources>

@@ -1,0 +1,194 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/RelativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+    <com.example.koolmeo.camera.capture.CameraGLView
+        android:id="@+id/cameraView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:weightSum="4"
+        android:id="@+id/camera_toptitle"
+        android:background="@drawable/camera_shade">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left">
+            <ImageView
+                android:id="@+id/buttonMenu"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:scaleType="fitXY"
+                android:padding="16dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/camera_icon_back" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/buttonFilter"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:scaleType="fitXY"
+                android:padding="16dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/camera_icon_filter_nor" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/buttonFlash"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:scaleType="fitXY"
+                    android:padding="16dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/camera_icon_lights_on" />
+
+                <ImageView
+                    android:id="@+id/buttonBeau"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:scaleType="fitXY"
+                    android:padding="16dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/camera_icon_magicwand_on"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignStart="@+id/buttonFlash" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right">
+            <ImageView
+                android:id="@+id/buttonHome"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:scaleType="fitXY"
+                android:padding="16dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/camera_icon_next_nor" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:id="@+id/buttonsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:weightSum="100"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="33"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/button_ChangeCamera"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/camera_icon_reversing_camera"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="33"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <com.example.koolmeo.camera.custom.CameraRecordTextView
+                    android:id="@+id/button_capture"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="33"
+                android:gravity="center"
+                android:id="@+id/lbt"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:id="@+id/btn_record_del"
+                    android:src="@drawable/camera_icon_withdram"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/button_finished"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:visibility="gone"
+                android:src="@drawable/camera_icon_complete"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/camera_rl_focus"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/camera_icon_focus"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/camera_mergevideo_showprogress"
+        android:gravity="center"
+        android:visibility="gone">
+        <ProgressBar
+            android:layout_width="35dp"
+            android:layout_height="35dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

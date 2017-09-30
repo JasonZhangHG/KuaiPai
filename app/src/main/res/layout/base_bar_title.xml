@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/barTitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    app:contentInsetStart="0dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/ivNavigation"
+            style="@style/paddingLeftButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/base_bar_back" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_gravity="left|center_vertical"
+            android:maxEms="12"
+            android:singleLine="true"
+            android:text="Title"
+            android:textColor="@color/base_bar_title"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvAction"
+            style="@style/paddingRightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:text="Action"
+            android:textSize="18sp"
+            android:textColor="@color/base_bar_action"
+            android:clickable="true" />
+
+    </FrameLayout>
+
+</android.support.v7.widget.Toolbar>

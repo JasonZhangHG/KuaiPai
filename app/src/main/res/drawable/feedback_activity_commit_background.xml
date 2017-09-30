@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:state_checked="false">
+    <shape >
+        <corners
+            android:topRightRadius="3dp"
+            android:bottomRightRadius="3dp"
+            android:topLeftRadius="3dp"
+            android:bottomLeftRadius="3dp"/>
+        <gradient
+            android:startColor="@color/feedback_activity_commit_background_color"
+            android:endColor="@color/feedback_activity_commit_background_color"/>
+        <size
+            android:layout_width="312dp"
+            android:layout_height="40dp"/>
+
+    </shape>
+
+</item>
+</selector>
