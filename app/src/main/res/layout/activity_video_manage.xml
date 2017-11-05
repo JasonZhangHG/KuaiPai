@@ -24,14 +24,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="60dp"
                 android:layout_marginTop="18dp"
-                android:text="视频管理"
+                android:text="@string/video_manage"
                 android:textColor="@color/black87"
                 android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/tvVideoManageActivitySelect1"
                 style="@style/TouchTextEventStyle"
-                android:text="选择"
+                android:text="@string/select"
                 android:textColor="@color/video_manage_activity_select_all_text_color"
                 android:textSize="16sp"
                 android:layout_alignParentRight="true"/>
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="65dp"
                 android:layout_marginTop="18dp"
-                android:text="视频"
+                android:text="@string/video_manage_activity_video_count"
                 android:textColor="@color/video_manage_activity_video_count_text_color"
                 android:textSize="16sp"/>
 
@@ -76,7 +76,7 @@
                 android:layout_marginRight="88dp"
                 android:clickable="true"
                 android:singleLine="true"
-                android:text="全选"
+                android:text="@string/video_manage_activity_select_all"
                 android:textColor="@color/video_manage_activity_select_all_text_color"
                 android:textSize="16sp"/>
 
@@ -85,7 +85,7 @@
                 android:id="@+id/tvVideoManageActivityCancel2"
                 style="@style/TouchEventSelectStyle"
                 android:clickable="true"
-                android:text="取消"
+                android:text="@string/camera_cancel"
                 android:textColor="@color/video_manage_activity_select_all_text_color"
                 android:textSize="16sp"
                 android:layout_alignParentTop="true"
@@ -111,7 +111,7 @@
         android:id="@+id/tvVideoManageActivityBlankPageText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="未上传的视频即将显示在这里"
+        android:text="@string/you_do_not_have_not_upload_the_video"
         android:textSize="16sp"
         android:layout_marginTop="20dp"
         android:textColor="@color/empty_page_text_color"

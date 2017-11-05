@@ -72,8 +72,12 @@ android {
 //        kuan {}
 //        xiaomi {}
 //        qh360 {}
-        baidu {}
-       // wandoujia {}
+        //  baidu {}
+        // wandoujia {}
+
+        GooglePlay {
+        }
+
     }
 
     productFlavors.all {

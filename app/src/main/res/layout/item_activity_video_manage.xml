@@ -84,7 +84,7 @@
 
             <TextView
                 android:id="@+id/tvVideoManageActivityItemUploadingText"
-                android:text="视频上传中"
+                android:text="@string/video_uploading"
                 android:layout_marginTop="212dp"
                 android:visibility="gone"
                 android:textColor="@color/video_manage_uploading_text_color"

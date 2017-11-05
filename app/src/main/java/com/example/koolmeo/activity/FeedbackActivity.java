@@ -65,16 +65,16 @@ public class FeedbackActivity extends BaseBarActivity {
                 if (TextUtils.isEmpty(feedbackContent) && TextUtils.isEmpty(email)) {
                     Toast.makeText(FeedbackActivity.this, "Please provide feedback", Toast.LENGTH_SHORT).show();
                 } else {
-                    FeedBackBean feedBackBean = new FeedBackBean(System.currentTimeMillis(),feedbackContent,email);
+                    FeedBackBean feedBackBean = new FeedBackBean(System.currentTimeMillis(), feedbackContent, email);
                     feedBackBean.save(new SaveListener<String>() {
 
                         @Override
                         public void done(String objectId, BmobException e) {
-                            if(e==null){
+                            if (e == null) {
                                 llFeedbackActivityCommit.setClickable(true);
                                 ToastHelper.showLongMessage("很高兴收到您的反馈，我们会尽快处理");
                                 finish();
-                            }else{
+                            } else {
                                 llFeedbackActivityCommit.setClickable(true);
                                 ToastHelper.showLongMessage("很遗憾 反馈失败 可重新提交反馈");
                             }

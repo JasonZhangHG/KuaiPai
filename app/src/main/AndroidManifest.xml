@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.koolmeo">
+<manifest package="com.example.koolmeo"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- 允许联网 -->
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -41,8 +41,8 @@
         <activity
             android:name=".camera.activities.ShareActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden">
         </activity>
         <activity
             android:name=".activity.MediaPlayerActivity"
@@ -62,7 +62,7 @@
 
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="${UMENG_CHANNEL_VALUE}" />
+            android:value="${UMENG_CHANNEL_VALUE}"/>
 
 
     </application>

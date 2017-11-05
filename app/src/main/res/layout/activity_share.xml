@@ -31,7 +31,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:gravity="center"
-            android:text="返回"
+            android:text="@string/camera_cancel"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold"/>
@@ -42,7 +42,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:gravity="center"
-            android:text="完成"
+            android:text="@string/finish"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold"/>
@@ -57,9 +57,10 @@
         android:layout_marginStart="10dp"
         android:background="@null"
         android:gravity="top|start"
-        android:hint="说点什么吧..."
+        android:hint="@string/say_something"
         android:padding="5dp"
         android:textColor="@color/white"
+        android:visibility="gone"
         android:textColorHint="@color/white"/>
     <com.example.koolmeo.view.FlikerProgressBar
         android:id="@+id/flikerBarShareActivity"

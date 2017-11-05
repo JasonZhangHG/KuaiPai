@@ -1,5 +1,6 @@
 package com.example.koolmeo.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -133,9 +134,9 @@ public class FlikerProgressBar extends View implements Runnable {
         textRect = new Rect();
         bgRectf = new RectF(borderWidth, borderWidth, getMeasuredWidth() - borderWidth, getMeasuredHeight() - borderWidth);
 
-        if(isStop){
+        if (isStop) {
             progressColor = stopColor;
-        } else{
+        } else {
             progressColor = loadingColor;
         }
 
@@ -160,7 +161,7 @@ public class FlikerProgressBar extends View implements Runnable {
         int heightSpecMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSpecSize = MeasureSpec.getSize(heightMeasureSpec);
         int height = 0;
-        switch (heightSpecMode){
+        switch (heightSpecMode) {
             case MeasureSpec.AT_MOST:
                 height = dp2px(DEFAULT_HEIGHT_DP);
                 break;
@@ -171,7 +172,7 @@ public class FlikerProgressBar extends View implements Runnable {
         }
         setMeasuredDimension(widthSpecSize, height);
 
-        if(pgBitmap == null){
+        if (pgBitmap == null) {
             init();
         }
 
@@ -187,7 +188,7 @@ public class FlikerProgressBar extends View implements Runnable {
         //进度
         drawProgress(canvas);
 
-         //进度text
+        //进度text
         drawProgressText(canvas);
 
         //变色处理
@@ -196,6 +197,7 @@ public class FlikerProgressBar extends View implements Runnable {
 
     /**
      * 边框
+     *
      * @param canvas
      */
     private void drawBackGround(Canvas canvas) {
@@ -207,6 +209,7 @@ public class FlikerProgressBar extends View implements Runnable {
     /**
      * 进度
      */
+    @SuppressLint("WrongConstant")
     private void drawProgress(Canvas canvas) {
         pgPaint.setColor(progressColor);
 
@@ -216,7 +219,7 @@ public class FlikerProgressBar extends View implements Runnable {
         pgCanvas.drawColor(progressColor);
         pgCanvas.restore();
 
-        if(!isStop){
+        if (!isStop) {
             pgPaint.setXfermode(xfermode);
             pgCanvas.drawBitmap(flikerBitmap, flickerLeft, 0, pgPaint);
             pgPaint.setXfermode(null);
@@ -230,6 +233,7 @@ public class FlikerProgressBar extends View implements Runnable {
 
     /**
      * 进度提示文本
+     *
      * @param canvas
      */
     private void drawProgressText(Canvas canvas) {
@@ -245,8 +249,10 @@ public class FlikerProgressBar extends View implements Runnable {
 
     /**
      * 变色处理
+     *
      * @param canvas
      */
+    @SuppressLint("WrongConstant")
     private void drawColorProgressText(Canvas canvas) {
         textPaint.setColor(Color.WHITE);
         int tWidth = textRect.width();
@@ -254,7 +260,7 @@ public class FlikerProgressBar extends View implements Runnable {
         float xCoordinate = (getMeasuredWidth() - tWidth) / 2;
         float yCoordinate = (getMeasuredHeight() + tHeight) / 2;
         float progressWidth = (progress / maxProgress) * getMeasuredWidth();
-        if(progressWidth > xCoordinate){
+        if (progressWidth > xCoordinate) {
             canvas.save(Canvas.CLIP_SAVE_FLAG);
             float right = Math.min(progressWidth, xCoordinate + tWidth * 1.1f);
             canvas.clipRect(xCoordinate, 0, right, getMeasuredHeight());
@@ -263,9 +269,9 @@ public class FlikerProgressBar extends View implements Runnable {
         }
     }
 
-    public void setProgress(float progress){
-        if(!isStop){
-            if(progress < maxProgress){
+    public void setProgress(float progress) {
+        if (!isStop) {
+            if (progress < maxProgress) {
                 this.progress = progress;
             } else {
                 this.progress = maxProgress;
@@ -277,7 +283,7 @@ public class FlikerProgressBar extends View implements Runnable {
 
     public void setStop(boolean stop) {
         isStop = stop;
-        if(isStop){
+        if (isStop) {
             progressColor = stopColor;
             thread.interrupt();
         } else {
@@ -293,9 +299,9 @@ public class FlikerProgressBar extends View implements Runnable {
         setStop(true);
     }
 
-    public void toggle(){
-        if(!isFinish){
-            if(isStop){
+    public void toggle() {
+        if (!isFinish) {
+            if (isStop) {
                 setStop(false);
             } else {
                 setStop(true);
@@ -307,16 +313,16 @@ public class FlikerProgressBar extends View implements Runnable {
     public void run() {
         int width = flikerBitmap.getWidth();
         try {
-            while (!isStop && !thread.isInterrupted()){
+            while (!isStop && !thread.isInterrupted()) {
                 flickerLeft += dp2px(5);
                 float progressWidth = (progress / maxProgress) * getMeasuredWidth();
-                if(flickerLeft >= progressWidth){
+                if (flickerLeft >= progressWidth) {
                     flickerLeft = -width;
                 }
                 postInvalidate();
                 Thread.sleep(20);
             }
-        }catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
@@ -324,7 +330,7 @@ public class FlikerProgressBar extends View implements Runnable {
     /**
      * 重置
      */
-    public void reset(){
+    public void reset() {
         setStop(true);
         progress = 0;
         isFinish = false;
@@ -348,21 +354,21 @@ public class FlikerProgressBar extends View implements Runnable {
     }
 
     private String getProgressText() {
-        String text= "";
-        if(!isFinish){
-            if(!isStop){
-                text = "视频上传中" + progress + "%";
+        String text = "";
+        if (!isFinish) {
+            if (!isStop) {
+                text = getResources().getString(R.string.video_uploading) + progress + "%";
             } else {
-                text = "继续";
+                text = getResources().getString(R.string.go_on);
             }
-        } else{
-            text = "上传完成";
+        } else {
+            text = getResources().getString(R.string.finish);
         }
 
         return text;
     }
 
-    private int dp2px(int dp){
+    private int dp2px(int dp) {
         float density = getContext().getResources().getDisplayMetrics().density;
         return (int) (dp * density);
     }

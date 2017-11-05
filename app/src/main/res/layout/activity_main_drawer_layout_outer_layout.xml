@@ -28,7 +28,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="60dp"
-                android:text="快 拍"
+                android:text="@string/app_name"
                 android:textColor="@color/video_manage_activity_select_all_text_color"
                 android:textSize="22sp"
                 android:textStyle="bold"/>

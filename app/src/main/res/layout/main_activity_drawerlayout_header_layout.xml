@@ -108,7 +108,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="56dp"
                         android:layout_marginTop="3dp"
-                        android:text="视频管理"/>
+                        android:text="@string/video_manage"/>
 
                     <TextView
                         android:id="@+id/tvMainDrawerNotUploadVideoCount"
@@ -150,7 +150,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="56dp"
                         android:layout_marginTop="3dp"
-                        android:text="消息通知"/>
+                        android:text="@string/notification"/>
 
                 </RelativeLayout>
             </LinearLayout>
@@ -183,7 +183,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="56dp"
                         android:layout_marginTop="3dp"
-                        android:text="反馈"/>
+                        android:text="@string/feedback_activity_title"/>
 
                 </RelativeLayout>
             </LinearLayout>
@@ -217,7 +217,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="56dp"
                         android:layout_marginTop="3dp"
-                        android:text="设置"/>
+                        android:text="@string/action_settings"/>
                 </RelativeLayout>
             </LinearLayout>
 
@@ -238,7 +238,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:text="登陆"
+                    android:text="@string/log_in"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     android:textStyle="bold"/>
