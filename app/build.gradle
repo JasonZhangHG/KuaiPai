@@ -11,8 +11,8 @@ android {
         applicationId "com.example.koolmeo"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode new Date().format("yyMMddHHmm").toInteger()
+        versionName "1.1"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -69,11 +69,11 @@ android {
     }
 
     productFlavors {
-//        kuan {}
-//        xiaomi {}
-//        qh360 {}
-        //  baidu {}
-        // wandoujia {}
+        kuan {}
+        xiaomi {}
+        qh360 {}
+        baidu {}
+        wandoujia {}
 
         GooglePlay {
         }
