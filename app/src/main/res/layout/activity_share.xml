@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.koolmeo.view.CustomVideoView
+    <com.china.snapshot.view.CustomVideoView
         android:id="@+id/CustomVideoViewShareActivity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -62,7 +62,7 @@
         android:textColor="@color/white"
         android:visibility="gone"
         android:textColorHint="@color/white"/>
-    <com.example.koolmeo.view.FlikerProgressBar
+    <com.china.snapshot.view.FlikerProgressBar
         android:id="@+id/flikerBarShareActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

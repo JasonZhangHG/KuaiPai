@@ -5,9 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.koolmeo.activity.MediaPlayerActivity">
+    tools:context="com.china.snapshot.activity.MediaPlayerActivity">
 
-    <com.example.koolmeo.view.CustomVideoView
+    <com.china.snapshot.view.CustomVideoView
         android:id="@+id/cusVideoViewMediaPlayerActivity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

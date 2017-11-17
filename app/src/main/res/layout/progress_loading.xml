@@ -15,7 +15,7 @@
         android:padding="20dp">
 
 
-        <com.example.koolmeo.view.RotateLoading
+        <com.china.snapshot.view.RotateLoading
             android:id="@+id/rotateloading"
             android:layout_width="50dp"
             android:layout_height="50dp"

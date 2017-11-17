@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-	<com.example.koolmeo.camera.capture.CameraGLView
+	<com.china.snapshot.camera.capture.CameraGLView
 		android:id="@+id/cameraView"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
@@ -133,7 +133,7 @@
 			android:layout_weight="33"
 			android:orientation="horizontal"
 			android:gravity="center">
-			<com.example.koolmeo.camera.custom.CameraRecordTextView
+			<com.china.snapshot.camera.custom.CameraRecordTextView
 				android:id="@+id/button_capture"
 				android:layout_width="80dp"
 				android:layout_height="80dp"
