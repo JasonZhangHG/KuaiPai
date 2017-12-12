@@ -8,7 +8,7 @@ android {
     aaptOptions.useNewCruncher = false
 
     defaultConfig {
-        applicationId "com.example.koolmeo"
+        applicationId "com.china.snapshot"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode new Date().format("yyMMddHHmm").toInteger()

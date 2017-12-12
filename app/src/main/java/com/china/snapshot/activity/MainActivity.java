@@ -45,7 +45,7 @@ import cn.bmob.v3.listener.FindListener;
 import rx.Subscription;
 import rx.functions.Action1;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener{
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.ivMainActivityMenu) ImageView ivMainActivityMenu;
     @BindView(R.id.ivMainActivityCamera) ImageView ivMainActivityCamera;
@@ -211,16 +211,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                     }
                 }
             });
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
 
     }
 
-    public void finishRefresh(final int actionType){
-        if (actionType == STATE_REFRESH){
+    public void finishRefresh(final int actionType) {
+        if (actionType == STATE_REFRESH) {
             refreshLayout.finishRefresh();
-        }else if (actionType == STATE_REFRESH){
+        } else if (actionType == STATE_REFRESH) {
             refreshLayout.finishLoadmore();
         }
     }
@@ -262,7 +262,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 toActivity(FilterCameraActivity.class);
                 break;
             case R.id.flMainDrawerUser:
-            //进入自己的主页
+                //进入自己的主页
                 closeDrawer();
                 break;
             case R.id.ivMainDrawerUserAvatar:
@@ -276,7 +276,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 break;
             case R.id.llMainDrawerNews:
                 //消息通知页
-               // toActivity(MessageActivity
+                // toActivity(MessageActivity
                 // .class);
                 closeDrawer();
                 break;
@@ -287,12 +287,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 break;
             case R.id.llMainDrawerSetting:
                 //设置页
-              //  toActivity(SettingActivity.class);
+                //  toActivity(SettingActivity.class);
                 closeDrawer();
                 break;
             case R.id.llMainDrawerLogin:
                 //登陆页
-               // toActivity(LoginActivity.class);
+                // toActivity(LoginActivity.class);
                 closeDrawer();
                 break;
             default:
@@ -300,6 +300,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
         }
     }
+
     private boolean isDrawerOpen() {
         return dlMain.isDrawerOpen(Gravity.LEFT);
     }

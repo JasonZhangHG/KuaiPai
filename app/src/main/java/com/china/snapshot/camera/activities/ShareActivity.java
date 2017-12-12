@@ -98,8 +98,10 @@ public class ShareActivity extends BaseActivity {
                 flikerBar.setVisibility(View.VISIBLE);
                 upLoadVideo();
                 break;
-
+            default:
+                break;
         }
+
     }
 
     public void upLoadVideo() {

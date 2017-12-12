@@ -48,12 +48,13 @@ public class AndroidShare extends Dialog implements AdapterView.OnItemClickListe
 	private Handler mHandler = new Handler();
 
 	private Runnable work = new Runnable() {
+		@Override
 		public void run() {
 			int orient = getScreenOrientation();
 			if (orient != mScreenOrientation) {
-				if (orient == 0)
+				if (orient == 0) {
 					mGridView.setNumColumns(4);
-				else {
+				} else {
 					mGridView.setNumColumns(6);
 				}
 				mScreenOrientation = orient;
@@ -71,8 +72,9 @@ public class AndroidShare extends Dialog implements AdapterView.OnItemClickListe
 		super(context, theme);
 		this.msgText = msgText;
 
-		if (Patterns.WEB_URL.matcher(imgUri).matches())
+		if (Patterns.WEB_URL.matcher(imgUri).matches()) {
 			new Thread(new Runnable() {
+				@Override
 				public void run() {
 					try {
 						mImgPath = getImagePath(imgUri, getFileCache());
@@ -81,26 +83,29 @@ public class AndroidShare extends Dialog implements AdapterView.OnItemClickListe
 					}
 				}
 			}).start();
-		else
+		} else {
 			this.mImgPath = imgUri;
+		}
 	}
 
 	public AndroidShare(Context context, String msgText, final String imgUri) {
 		super(context, R.style.shareDialogTheme);
 		this.msgText = msgText;
 
-		if (Patterns.WEB_URL.matcher(imgUri).matches())
+		if (Patterns.WEB_URL.matcher(imgUri).matches()) {
 			new Thread(new Runnable() {
+				@Override
 				public void run() {
 					try {
-						mImgPath = getImagePath(imgUri,getFileCache());
+						mImgPath = getImagePath(imgUri, getFileCache());
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
 				}
 			}).start();
-		else
+		} else {
 			this.mImgPath = imgUri;
+		}
 	}
 
 	void init(Context context) {
@@ -161,12 +166,14 @@ public class AndroidShare extends Dialog implements AdapterView.OnItemClickListe
 
 		List<PackageInfo> pinfo = packageManager.getInstalledPackages(0);
 		for (int i = 0; i < pinfo.size(); i++) {
-			if (((PackageInfo) pinfo.get(i)).packageName.equalsIgnoreCase(packageName))
+			if (((PackageInfo) pinfo.get(i)).packageName.equalsIgnoreCase(packageName)) {
 				return true;
+			}
 		}
 		return false;
 	}
 
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
@@ -189,12 +196,14 @@ public class AndroidShare extends Dialog implements AdapterView.OnItemClickListe
 		this.mHandler.postDelayed(this.work, 1000L);
 
 		setOnDismissListener(new OnDismissListener() {
+			@Override
 			public void onDismiss(DialogInterface dialog) {
 				mHandler.removeCallbacks(work);
 			}
 		});
 	}
 
+	@Override
 	public void show() {
 		super.show();
 	}
@@ -209,6 +218,7 @@ public class AndroidShare extends Dialog implements AdapterView.OnItemClickListe
 		return width > height ? portrait : landscape;
 	}
 
+	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		ShareItem share = (ShareItem) this.mListData.get(position);
 		shareMsg(getContext(), "分享到...", this.msgText, this.mImgPath, share);
@@ -247,9 +257,9 @@ public class AndroidShare extends Dialog implements AdapterView.OnItemClickListe
 	private File getFileCache() {
 		File cache = null;
 
-		if (Environment.getExternalStorageState().equals("mounted"))
+		if (Environment.getExternalStorageState().equals("mounted")) {
 			cache = new File(Environment.getExternalStorageDirectory() + "/." + getContext().getPackageName());
-		else {
+		} else {
 			cache = new File(getContext().getCacheDir().getAbsolutePath() + "/." + getContext().getPackageName());
 		}
 		if ((cache != null) && (!cache.exists())) {
@@ -295,14 +305,17 @@ public class AndroidShare extends Dialog implements AdapterView.OnItemClickListe
 		public MyAdapter() {
 		}
 
+		@Override
 		public int getCount() {
 			return mListData.size();
 		}
 
+		@Override
 		public Object getItem(int position) {
 			return null;
 		}
 
+		@Override
 		public long getItemId(int position) {
 			return 0L;
 		}
@@ -333,6 +346,7 @@ public class AndroidShare extends Dialog implements AdapterView.OnItemClickListe
 			return item;
 		}
 
+		@Override
 		@SuppressWarnings("ResourceType")
 		public View getView(int position, View convertView, ViewGroup parent) {
 			if (convertView == null) {

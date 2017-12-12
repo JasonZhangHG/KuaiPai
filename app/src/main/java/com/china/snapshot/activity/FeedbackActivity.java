@@ -53,6 +53,7 @@ public class FeedbackActivity extends BaseBarActivity {
         });
     }
 
+    @Override
     @OnClick({R.id.llFeedbackActivityCommit})
     public void onClick(View view) {
         switch (view.getId()) {
