@@ -36,5 +36,6 @@
     <string name="log_in">Login</string>
 
     <string name="go_on">Continue</string>
+    <string name="quit_app">Tap again to quit Snapshot</string>
 
 </resources>

@@ -75,6 +75,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private int limit = 10; // 每页的数据是10条
     private int curPage = 0; // 当前页的编号，从0开始
     private String lastTime = null;
+    private long firstBack = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +86,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         initRecyclerView();
         queryData(0, STATE_REFRESH);
         registerRxBus();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterRxBus();
     }
 
     private void initView() {
@@ -231,12 +238,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterRxBus();
-    }
-
 
     // Subscription rxSubscription;
     private void registerRxBus() {
@@ -312,6 +313,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         }
     }
 
+
     private void closeDrawer() {
         doInUI(new Runnable() {
             @Override
@@ -323,6 +325,21 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 }
             }
         }, 500);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if (isDrawerOpen()) {
+            closeDrawer();
+        } else {
+            if (System.currentTimeMillis() - firstBack < 2000) {
+                super.onBackPressed();
+            } else {
+                firstBack = System.currentTimeMillis();
+                ToastHelper.showShortMessage(R.string.quit_app);
+            }
+        }
     }
 
     public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapter.MainActivityViewHolder> {

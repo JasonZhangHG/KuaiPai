@@ -27,4 +27,5 @@
     <string name="feedback_activity_send_bloag_text">Agree to send log</string>
     <string name="feedback_activity_commit_text">Submit feedback</string>
     <string name="feedback_activity_title">Feedback</string>
+    <string name="quit_app">Tap again to quit Snapshot</string>
 </resources>

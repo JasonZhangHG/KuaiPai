@@ -34,4 +34,5 @@
     <string name="select">Select</string>
     <string name="notification">Notification</string>
     <string name="log_in">Login</string>
+    <string name="quit_app">Tap again to quit Snapshot</string>
 </resources>
