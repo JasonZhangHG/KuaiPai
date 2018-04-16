@@ -4,6 +4,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -11,6 +12,7 @@ import com.bumptech.glide.Glide;
 import com.china.snapshot.R;
 import com.china.snapshot.base.BaseActivity;
 import com.china.snapshot.bean.LocalMediaDetailBean;
+import com.china.snapshot.camera.activities.AndroidShare;
 import com.china.snapshot.util.DBLocalMediaDetailBeanUtils;
 import com.china.snapshot.view.CustomVideoView;
 
@@ -20,6 +22,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.DownloadFileListener;
@@ -28,9 +31,11 @@ public class MediaPlayerActivity extends BaseActivity {
 
     @BindView(R.id.cusVideoViewMediaPlayerActivity) CustomVideoView cusVideoView;
     @BindView(R.id.ivVideoViewMediaPlayerActivity) ImageView mImageViewBg;
+    @BindView(R.id.btn_share_media_player_activity) Button btnShareMediaPlayerActivity;
 
     public static String INTENT_TO_MEDIAPLAYER_ACTIVITY_MEDIA_URL;
     public static String INTENT_TO_MEDIAPLAYER_ACTIVITY_IMAGE_URL;
+
 
     private String mediaName;
     private String mediaUrl;
@@ -119,5 +124,11 @@ public class MediaPlayerActivity extends BaseActivity {
                 cusVideoView.start();
             }
         });
+    }
+
+    @OnClick(R.id.btn_share_media_player_activity)
+    public void share() {
+        AndroidShare as = new AndroidShare(this, "Share video :  " + mediaUrl, "");
+        as.show();
     }
 }
