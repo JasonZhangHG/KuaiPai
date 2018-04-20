@@ -28,6 +28,7 @@ public class HttpBeanMediaDetailDao extends AbstractDao<HttpBeanMediaDetail, Lon
         public final static Property LocationDesc = new Property(1, String.class, "locationDesc", false, "HttpBeanMediaDetail");
         public final static Property MediaUrl = new Property(2, String.class, "mediaUrl", false, "MEDIA_URL");
         public final static Property ThumbnailUrl = new Property(3, String.class, "thumbnailUrl", false, "THUMBNAIL_URL");
+        public final static Property UploadUserName = new Property(4, String.class, "uploadUserName", false, "UPLOAD_USER_NAME");
     }
 
 
@@ -46,7 +47,8 @@ public class HttpBeanMediaDetailDao extends AbstractDao<HttpBeanMediaDetail, Lon
                 "\"_id\" INTEGER PRIMARY KEY NOT NULL ," + // 0: creatTimeAsId
                 "\"HttpBeanMediaDetail\" TEXT," + // 1: locationDesc
                 "\"MEDIA_URL\" TEXT," + // 2: mediaUrl
-                "\"THUMBNAIL_URL\" TEXT);"); // 3: thumbnailUrl
+                "\"THUMBNAIL_URL\" TEXT," + // 3: thumbnailUrl
+                "\"UPLOAD_USER_NAME\" TEXT);"); // 4: uploadUserName
     }
 
     /** Drops the underlying database table. */
@@ -74,6 +76,11 @@ public class HttpBeanMediaDetailDao extends AbstractDao<HttpBeanMediaDetail, Lon
         if (thumbnailUrl != null) {
             stmt.bindString(4, thumbnailUrl);
         }
+ 
+        String uploadUserName = entity.getUploadUserName();
+        if (uploadUserName != null) {
+            stmt.bindString(5, uploadUserName);
+        }
     }
 
     @Override
@@ -95,6 +102,11 @@ public class HttpBeanMediaDetailDao extends AbstractDao<HttpBeanMediaDetail, Lon
         if (thumbnailUrl != null) {
             stmt.bindString(4, thumbnailUrl);
         }
+ 
+        String uploadUserName = entity.getUploadUserName();
+        if (uploadUserName != null) {
+            stmt.bindString(5, uploadUserName);
+        }
     }
 
     @Override
@@ -108,7 +120,8 @@ public class HttpBeanMediaDetailDao extends AbstractDao<HttpBeanMediaDetail, Lon
             cursor.getLong(offset + 0), // creatTimeAsId
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // locationDesc
             cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // mediaUrl
-            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3) // thumbnailUrl
+            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // thumbnailUrl
+            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4) // uploadUserName
         );
         return entity;
     }
@@ -119,6 +132,7 @@ public class HttpBeanMediaDetailDao extends AbstractDao<HttpBeanMediaDetail, Lon
         entity.setLocationDesc(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
         entity.setMediaUrl(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
         entity.setThumbnailUrl(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
+        entity.setUploadUserName(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
      }
     
     @Override

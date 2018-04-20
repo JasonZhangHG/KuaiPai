@@ -138,6 +138,7 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.github.bumptech.glide:okhttp3-integration:1.5.0@aar'
     compile 'cn.bmob.android:bmob-sdk:3.5.5'
+    compile 'org.greenrobot:eventbus:3.0.0'
     compile 'cn.bmob.android:bmob-push:0.8'
     compile 'cn.bmob.android:bmob-im:2.0.5@aar'
     compile 'cn.bmob.android:bmob-sms:1.0.1'

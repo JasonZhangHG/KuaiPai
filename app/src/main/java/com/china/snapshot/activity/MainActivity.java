@@ -30,6 +30,10 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -39,6 +43,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.datatype.BmobDate;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
@@ -86,12 +91,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         initRecyclerView();
         queryData(0, STATE_REFRESH);
         registerRxBus();
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         unregisterRxBus();
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this);
+        }
     }
 
     private void initView() {
@@ -114,15 +125,28 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         ivMainActivityMenu.setOnClickListener(this);
         ivMainActivityCamera.setOnClickListener(this);
 
+        BmobUser bmobUser = BmobUser.getCurrentUser();
+        if (bmobUser != null) {
+            tvMainDrawerNickname.setText(bmobUser.getUsername());
+        }
     }
 
     public void initRecyclerView() {
         httpBeanMediaDetails = DBHttpBeanMediaDetailUtils.getInstance().queryData();
-        final GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
-        rlvMainActivity.setLayoutManager(gridLayoutManager);
-        mainActivityAdapter = new MainActivityAdapter();
-        rlvMainActivity.setAdapter(mainActivityAdapter);
-        refresh();
+        if (mainActivityAdapter == null) {
+            final GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
+            rlvMainActivity.setLayoutManager(gridLayoutManager);
+            mainActivityAdapter = new MainActivityAdapter();
+            rlvMainActivity.setAdapter(mainActivityAdapter);
+            refresh();
+        } else {
+            mainActivityAdapter.notifyDataSetChanged();
+        }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void receiveAddFriendSuccessEvent(HttpBeanMediaDetail httpBeanMediaDetail) {
+        initRecyclerView();
     }
 
     public void refresh() {
@@ -224,6 +248,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     }
 
+
     public void finishRefresh(final int actionType) {
         if (actionType == STATE_REFRESH) {
             refreshLayout.finishRefresh();
@@ -272,7 +297,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.llMainDrawerVideo:
                 //视频管理页
-                toActivity(VideoManageActivity.class);
+                toActivity(CurrentUserVideoActivity.class);
                 closeDrawer();
                 break;
             case R.id.llMainDrawerNews:

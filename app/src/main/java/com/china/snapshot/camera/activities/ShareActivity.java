@@ -26,6 +26,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
@@ -44,6 +45,7 @@ public class ShareActivity extends BaseActivity {
     private String filePath;
     private String description;
     private String picturePath;
+    private BmobUser bmobUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,7 @@ public class ShareActivity extends BaseActivity {
             return;
         }
         startVideo(filePath);
+        bmobUser = BmobUser.getCurrentUser();
     }
 
     public void startVideo(final String videoPath) {
@@ -121,6 +124,9 @@ public class ShareActivity extends BaseActivity {
                     httpBeanMediaDetail.setThumbnailUrl(urls.get(0));
                     httpBeanMediaDetail.setMediaUrl(urls.get(1));
                     httpBeanMediaDetail.setLocationDesc(description);
+                    if (bmobUser != null) {
+                        httpBeanMediaDetail.setUploadUserName(bmobUser.getUsername());
+                    }
                     httpBeanMediaDetail.save(new SaveListener<String>() {
                         @Override
                         public void done(String objectId, BmobException e) {
