@@ -10,6 +10,7 @@
     <color name="colorPrimaryDark">@color/white</color>
     <color name="colorAccent">@color/white</color>
     <color name="base_bar_action">#FF4D73FF</color>
+    <color name="blue">#3F51B5</color>
     <color name="user_activity_tab_selected_number_color">#FFffb300</color>
     <color name="user_activity_tab_selected_text_color">#8fffb300</color>
     <color name="user_activity_collapsing__toolbar_layout_contentScrim">#88ffffff</color>
@@ -99,5 +100,10 @@
     <color name="base_bar_title">#de000000</color>
     <color name="feedback_activity_edit_stroke_color">#1f000000</color>
     <color name="feedback_activity_send_bloag_text_color">#7a000000</color>
+
+    <color name="bg_gray_pressed">#e8e8e8</color>
+    <color name="transparent">#00000000</color>
+    <color name="translucent">#30000000</color>
+    <color name="btn_orange_press">#ff9000</color>
 
 </resources>

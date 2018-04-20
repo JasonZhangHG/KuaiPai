@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/blue">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="快   拍"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:id="@+id/llLoginActivityAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/white_circle_shape"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="visible">
+
+        <EditText
+            android:id="@+id/editLoginActivityUsrName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="用户名："
+            android:textColorHint="#cccccc"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/editLoginActivityPassWord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:hint="密码："
+            android:inputType="textPassword"
+            android:textColorHint="#cccccc"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btnLoginActivityLogin"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_login_sel"
+            android:text="登录"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+
+        <TextView
+            android:id="@+id/tvLoginActivityRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_transparent2gray_sel"
+            android:clickable="true"
+            android:gravity="center"
+            android:text=" 没有账号？点击注册 "
+            android:textColor="#888888"/>
+    </LinearLayout>
+
+</RelativeLayout>

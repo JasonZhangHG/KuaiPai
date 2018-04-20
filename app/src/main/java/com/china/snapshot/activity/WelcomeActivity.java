@@ -5,12 +5,14 @@ import android.os.Bundle;
 import com.china.snapshot.R;
 import com.china.snapshot.base.BaseActivity;
 import com.china.snapshot.bean.HttpBeanMediaDetail;
+import com.china.snapshot.login.LoginActivity;
 import com.china.snapshot.util.DBHttpBeanMediaDetailUtils;
 
 import java.util.List;
 
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
@@ -25,9 +27,16 @@ public class WelcomeActivity extends BaseActivity {
         doInUI(new Runnable() {
             @Override
             public void run() {
+                BmobUser bmobUser = BmobUser.getCurrentUser();
                 getMediaData();
-                toActivity(MainActivity.class);
-                WelcomeActivity.this.finish();
+                if (bmobUser != null) {
+                    // 允许用户使用应用
+                    toActivity(MainActivity.class);
+                    WelcomeActivity.this.finish();
+                } else {
+                    toActivity(LoginActivity.class);
+                    WelcomeActivity.this.finish();
+                }
             }
         }, 10);
     }

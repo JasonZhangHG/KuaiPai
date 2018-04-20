@@ -53,6 +53,15 @@
         <activity
             android:name="com.china.snapshot.activity.VideoManageActivity"
             android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".login.LoginActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".login.RegisterActivity"
+            android:screenOrientation="portrait"/>
+
         <activity android:name="com.china.snapshot.base.BaseBarActivity">
         </activity>
         <activity
