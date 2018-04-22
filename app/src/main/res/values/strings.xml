@@ -33,7 +33,7 @@
     <string name="video_manage">VideoManage</string>
     <string name="select">Select</string>
     <string name="notification">Notification</string>
-    <string name="log_in">Login</string>
+    <string name="log_in">LogOut</string>
 
     <string name="go_on">Continue</string>
     <string name="quit_app">Tap again to quit Snapshot</string>

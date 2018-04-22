@@ -199,7 +199,7 @@
                 android:paddingBottom="16dp"
                 android:paddingLeft="18dp"
                 android:paddingTop="16dp"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -217,7 +217,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="56dp"
                         android:layout_marginTop="3dp"
-                        android:text="@string/action_settings"/>
+                        android:text="个人页"/>
                 </RelativeLayout>
             </LinearLayout>
 
@@ -231,7 +231,7 @@
                 android:background="@drawable/main_drawer_connect_background"
                 android:clickable="true"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <TextView
                     android:layout_width="wrap_content"

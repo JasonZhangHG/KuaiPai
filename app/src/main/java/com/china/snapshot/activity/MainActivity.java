@@ -21,6 +21,7 @@ import com.china.snapshot.R;
 import com.china.snapshot.base.BaseActivity;
 import com.china.snapshot.bean.HttpBeanMediaDetail;
 import com.china.snapshot.camera.capture.FilterCameraActivity;
+import com.china.snapshot.login.LoginActivity;
 import com.china.snapshot.rxbus.RxBus;
 import com.china.snapshot.rxbus.event.VideoUpdateEvent;
 import com.china.snapshot.util.DBHttpBeanMediaDetailUtils;
@@ -312,13 +313,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 closeDrawer();
                 break;
             case R.id.llMainDrawerSetting:
-                //设置页
-                //  toActivity(SettingActivity.class);
+                //个人页
+                  toActivity(UserInfoActivity.class);
                 closeDrawer();
                 break;
             case R.id.llMainDrawerLogin:
                 //登陆页
-                // toActivity(LoginActivity.class);
+                 toActivity(LoginActivity.class);
                 closeDrawer();
                 break;
             default:

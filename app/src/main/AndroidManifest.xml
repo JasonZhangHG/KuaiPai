@@ -65,7 +65,6 @@
             android:name=".activity.FeedbackActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateHidden"/>
-
         <activity
             android:name=".activity.CurrentUserVideoActivity"
             android:screenOrientation="portrait"/>
@@ -74,6 +73,9 @@
             android:name="UMENG_CHANNEL"
             android:value="${UMENG_CHANNEL_VALUE}"/>
 
+        <activity
+            android:name=".activity.UserInfoActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
