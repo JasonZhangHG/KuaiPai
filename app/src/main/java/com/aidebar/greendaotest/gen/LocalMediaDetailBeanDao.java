@@ -29,6 +29,8 @@ public class LocalMediaDetailBeanDao extends AbstractDao<LocalMediaDetailBean, L
         public final static Property MediaUrl = new Property(2, String.class, "mediaUrl", false, "MEDIA_URL");
         public final static Property ThumbnailUrl = new Property(3, String.class, "thumbnailUrl", false, "THUMBNAIL_URL");
         public final static Property MediaLocalPath = new Property(4, String.class, "mediaLocalPath", false, "MEDIA_LOCAL_PATH");
+        public final static Property Likes = new Property(5, int.class, "likes", false, "LIKES");
+        public final static Property IsLike = new Property(6, boolean.class, "isLike", false, "IS_LIKE");
     }
 
 
@@ -48,7 +50,9 @@ public class LocalMediaDetailBeanDao extends AbstractDao<LocalMediaDetailBean, L
                 "\"LocalMediaDetailBean\" TEXT," + // 1: locationDesc
                 "\"MEDIA_URL\" TEXT," + // 2: mediaUrl
                 "\"THUMBNAIL_URL\" TEXT," + // 3: thumbnailUrl
-                "\"MEDIA_LOCAL_PATH\" TEXT);"); // 4: mediaLocalPath
+                "\"MEDIA_LOCAL_PATH\" TEXT," + // 4: mediaLocalPath
+                "\"LIKES\" INTEGER NOT NULL ," + // 5: likes
+                "\"IS_LIKE\" INTEGER NOT NULL );"); // 6: isLike
     }
 
     /** Drops the underlying database table. */
@@ -81,6 +85,8 @@ public class LocalMediaDetailBeanDao extends AbstractDao<LocalMediaDetailBean, L
         if (mediaLocalPath != null) {
             stmt.bindString(5, mediaLocalPath);
         }
+        stmt.bindLong(6, entity.getLikes());
+        stmt.bindLong(7, entity.getIsLike() ? 1L: 0L);
     }
 
     @Override
@@ -107,6 +113,8 @@ public class LocalMediaDetailBeanDao extends AbstractDao<LocalMediaDetailBean, L
         if (mediaLocalPath != null) {
             stmt.bindString(5, mediaLocalPath);
         }
+        stmt.bindLong(6, entity.getLikes());
+        stmt.bindLong(7, entity.getIsLike() ? 1L: 0L);
     }
 
     @Override
@@ -121,7 +129,9 @@ public class LocalMediaDetailBeanDao extends AbstractDao<LocalMediaDetailBean, L
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // locationDesc
             cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // mediaUrl
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // thumbnailUrl
-            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4) // mediaLocalPath
+            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // mediaLocalPath
+            cursor.getInt(offset + 5), // likes
+            cursor.getShort(offset + 6) != 0 // isLike
         );
         return entity;
     }
@@ -133,6 +143,8 @@ public class LocalMediaDetailBeanDao extends AbstractDao<LocalMediaDetailBean, L
         entity.setMediaUrl(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
         entity.setThumbnailUrl(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
         entity.setMediaLocalPath(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
+        entity.setLikes(cursor.getInt(offset + 5));
+        entity.setIsLike(cursor.getShort(offset + 6) != 0);
      }
     
     @Override

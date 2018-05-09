@@ -11,8 +11,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blankj.utilcode.constant.PermissionConstants;
+import com.blankj.utilcode.util.PermissionUtils;
 import com.china.snapshot.R;
 import com.china.snapshot.activity.MainActivity;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         Bmob.initialize(this, "e631674bb3e4f3725dcbef0a33376580");
-
+        getGetWritePermission();
         btnLoginActivityLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +62,31 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
+    public void getGetWritePermission() {
+
+        PermissionUtils.permission(PermissionConstants.STORAGE)
+                .rationale(new PermissionUtils.OnRationaleListener() {
+                    @Override
+                    public void rationale(final ShouldRequest shouldRequest) {
+                        shouldRequest.again(true);
+                    }
+                })
+                .callback(new PermissionUtils.FullCallback() {
+                    @Override
+                    public void onGranted(List<String> permissionsGranted) {
+
+                    }
+
+                    @Override
+                    public void onDenied(List<String> permissionsDeniedForever,
+                                         List<String> permissionsDenied) {
+                        if (!permissionsDeniedForever.isEmpty()) {
+                            PermissionUtils.launchAppDetailsSettings();
+                        }
+                    }
+                }).request();
     }
 
     public void setLoginOnclick() {

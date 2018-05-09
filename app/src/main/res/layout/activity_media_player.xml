@@ -27,4 +27,30 @@
         android:layout_marginTop="16dp"
         android:text="分享"/>
 
+    <LinearLayout
+        android:id="@+id/ll_like_media_player_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|right"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/cb_like_media_player_activity"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/talk_to_item_icon_selected"
+            android:button="@null"
+            android:checked="false"
+            android:clickable="false"/>
+
+        <TextView
+            android:id="@+id/tv_like_media_player_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="喜欢数111"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
 </FrameLayout>

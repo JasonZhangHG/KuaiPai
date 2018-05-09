@@ -25,6 +25,7 @@ public class DaoMaster extends AbstractDaoMaster {
         DBUserBeanDao.createTable(db, ifNotExists);
         HttpBeanMediaDetailDao.createTable(db, ifNotExists);
         LocalMediaDetailBeanDao.createTable(db, ifNotExists);
+        HttpBeanMediaLikeDetailDao.createTable(db, ifNotExists);
     }
 
     /** Drops underlying database table using DAOs. */
@@ -33,6 +34,7 @@ public class DaoMaster extends AbstractDaoMaster {
         DBUserBeanDao.dropTable(db, ifExists);
         HttpBeanMediaDetailDao.dropTable(db, ifExists);
         LocalMediaDetailBeanDao.dropTable(db, ifExists);
+        HttpBeanMediaLikeDetailDao.dropTable(db, ifExists);
     }
 
     /**
@@ -55,6 +57,7 @@ public class DaoMaster extends AbstractDaoMaster {
         registerDaoClass(DBUserBeanDao.class);
         registerDaoClass(HttpBeanMediaDetailDao.class);
         registerDaoClass(LocalMediaDetailBeanDao.class);
+        registerDaoClass(HttpBeanMediaLikeDetailDao.class);
     }
 
     public DaoSession newSession() {

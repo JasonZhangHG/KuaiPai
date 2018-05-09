@@ -16,51 +16,91 @@ public class LocalMediaDetailBean {
     public String mediaUrl;
     public String thumbnailUrl;
     public String mediaLocalPath;
-    @Generated(hash = 1209458958)
-    public LocalMediaDetailBean(long creatTimeAsId, String locationDesc,
-            String mediaUrl, String thumbnailUrl, String mediaLocalPath) {
+    public int likes;
+    public boolean isLike;
+
+    @Generated(hash = 441034480)
+    public LocalMediaDetailBean(long creatTimeAsId, String locationDesc, String mediaUrl, String thumbnailUrl, String mediaLocalPath, int likes, boolean isLike) {
         this.creatTimeAsId = creatTimeAsId;
         this.locationDesc = locationDesc;
         this.mediaUrl = mediaUrl;
         this.thumbnailUrl = thumbnailUrl;
         this.mediaLocalPath = mediaLocalPath;
+        this.likes = likes;
+        this.isLike = isLike;
     }
+
     @Generated(hash = 1689000022)
     public LocalMediaDetailBean() {
     }
+
     public long getCreatTimeAsId() {
         return this.creatTimeAsId;
     }
+
     public void setCreatTimeAsId(long creatTimeAsId) {
         this.creatTimeAsId = creatTimeAsId;
     }
+
     public String getLocationDesc() {
         return this.locationDesc;
     }
+
     public void setLocationDesc(String locationDesc) {
         this.locationDesc = locationDesc;
     }
+
     public String getMediaUrl() {
         return this.mediaUrl;
     }
+
     public void setMediaUrl(String mediaUrl) {
         this.mediaUrl = mediaUrl;
     }
+
     public String getThumbnailUrl() {
         return this.thumbnailUrl;
     }
+
     public void setThumbnailUrl(String thumbnailUrl) {
         this.thumbnailUrl = thumbnailUrl;
     }
+
     public String getMediaLocalPath() {
         return this.mediaLocalPath;
     }
+
     public void setMediaLocalPath(String mediaLocalPath) {
         this.mediaLocalPath = mediaLocalPath;
     }
 
+
+    public int getLikes() {
+        return this.likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    public boolean getIsLike() {
+        return this.isLike;
+    }
+
+    public void setIsLike(boolean isLike) {
+        this.isLike = isLike;
+    }
+
     @Override
     public String toString() {
-        return "LocalMediaDetailBean{" + "creatTimeAsId=" + creatTimeAsId + ", locationDesc='" + locationDesc + '\'' + ", mediaUrl='" + mediaUrl + '\'' + ", thumbnailUrl='" + thumbnailUrl + '\'' + ", mediaLocalPath='" + mediaLocalPath + '\'' + '}';
+        return "LocalMediaDetailBean{" +
+                "creatTimeAsId=" + creatTimeAsId +
+                ", locationDesc='" + locationDesc + '\'' +
+                ", mediaUrl='" + mediaUrl + '\'' +
+                ", thumbnailUrl='" + thumbnailUrl + '\'' +
+                ", mediaLocalPath='" + mediaLocalPath + '\'' +
+                ", likes=" + likes +
+                ", isLike=" + isLike +
+                '}';
     }
 }

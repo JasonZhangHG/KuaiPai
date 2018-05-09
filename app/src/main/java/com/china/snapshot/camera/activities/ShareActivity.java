@@ -124,6 +124,7 @@ public class ShareActivity extends BaseActivity {
                     httpBeanMediaDetail.setThumbnailUrl(urls.get(0));
                     httpBeanMediaDetail.setMediaUrl(urls.get(1));
                     httpBeanMediaDetail.setLocationDesc(description);
+                    httpBeanMediaDetail.setLikes(0);
                     if (bmobUser != null) {
                         httpBeanMediaDetail.setUploadUserName(bmobUser.getUsername());
                     }

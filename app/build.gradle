@@ -143,6 +143,7 @@ dependencies {
     compile 'cn.bmob.android:bmob-im:2.0.5@aar'
     compile 'cn.bmob.android:bmob-sms:1.0.1'
     compile 'cn.bmob.android:http-legacy:1.0'
+    compile 'com.blankj:utilcode:1.14.3'
     compile 'com.googlecode.mp4parser:isoparser:1.1.18'
     compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
     compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3'

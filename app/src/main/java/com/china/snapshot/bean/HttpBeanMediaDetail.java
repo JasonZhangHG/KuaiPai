@@ -19,14 +19,18 @@ public class HttpBeanMediaDetail extends BmobObject {
     public String mediaUrl;
     public String thumbnailUrl;
     public String uploadUserName;
+    public int likes;
+    public boolean isLike;
 
-    @Generated(hash = 408243406)
-    public HttpBeanMediaDetail(long creatTimeAsId, String locationDesc, String mediaUrl, String thumbnailUrl, String uploadUserName) {
+    @Generated(hash = 1806665336)
+    public HttpBeanMediaDetail(long creatTimeAsId, String locationDesc, String mediaUrl, String thumbnailUrl, String uploadUserName, int likes, boolean isLike) {
         this.creatTimeAsId = creatTimeAsId;
         this.locationDesc = locationDesc;
         this.mediaUrl = mediaUrl;
         this.thumbnailUrl = thumbnailUrl;
         this.uploadUserName = uploadUserName;
+        this.likes = likes;
+        this.isLike = isLike;
     }
 
     @Generated(hash = 32068878)
@@ -65,16 +69,40 @@ public class HttpBeanMediaDetail extends BmobObject {
         this.thumbnailUrl = thumbnailUrl;
     }
 
-    @Override
-    public String toString() {
-        return "HttpBeanMediaDetail{" + "creatTimeAsId=" + creatTimeAsId + ", locationDesc='" + locationDesc + '\'' + ", mediaUrl='" + mediaUrl + '\'' + ", thumbnailUrl='" + thumbnailUrl + '\'' + '}';
-    }
-
     public String getUploadUserName() {
         return this.uploadUserName;
     }
 
     public void setUploadUserName(String uploadUserName) {
         this.uploadUserName = uploadUserName;
+    }
+
+    public int getLikes() {
+        return this.likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    public boolean getIsLike() {
+        return this.isLike;
+    }
+
+    public void setIsLike(boolean isLike) {
+        this.isLike = isLike;
+    }
+
+    @Override
+    public String toString() {
+        return "HttpBeanMediaDetail{" +
+                "creatTimeAsId=" + creatTimeAsId +
+                ", locationDesc='" + locationDesc + '\'' +
+                ", mediaUrl='" + mediaUrl + '\'' +
+                ", thumbnailUrl='" + thumbnailUrl + '\'' +
+                ", uploadUserName='" + uploadUserName + '\'' +
+                ", likes=" + likes +
+                ", isLike=" + isLike +
+                '}';
     }
 }

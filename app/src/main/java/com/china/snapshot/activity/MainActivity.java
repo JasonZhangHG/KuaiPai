@@ -25,6 +25,7 @@ import com.china.snapshot.login.LoginActivity;
 import com.china.snapshot.rxbus.RxBus;
 import com.china.snapshot.rxbus.event.VideoUpdateEvent;
 import com.china.snapshot.util.DBHttpBeanMediaDetailUtils;
+import com.china.snapshot.util.GsonConverter;
 import com.china.snapshot.util.ToastHelper;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -64,7 +65,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Subscription rxSubscription;
     private MainActivityAdapter mainActivityAdapter;
     private List<HttpBeanMediaDetail> httpBeanMediaDetails = new ArrayList<>();
-
 
     private ImageView ivMainDrawerBg;
     private ImageView ivMainDrawerUserAvatar;
@@ -314,13 +314,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.llMainDrawerSetting:
                 //个人页
-                  toActivity(UserInfoActivity.class);
+                toActivity(UserInfoActivity.class);
                 closeDrawer();
                 break;
             case R.id.llMainDrawerLogin:
                 //登陆页
-                 toActivity(LoginActivity.class);
+                toActivity(LoginActivity.class);
                 closeDrawer();
+                finish();
                 break;
             default:
                 break;
@@ -385,8 +386,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(MainActivity.this, MediaPlayerActivity.class);
-                        intent.putExtra(MediaPlayerActivity.INTENT_TO_MEDIAPLAYER_ACTIVITY_IMAGE_URL, httpBeanMediaDetails.get(position).getThumbnailUrl());
-                        intent.putExtra(MediaPlayerActivity.INTENT_TO_MEDIAPLAYER_ACTIVITY_MEDIA_URL, httpBeanMediaDetails.get(position).getMediaUrl());
+                        intent.putExtra(MediaPlayerActivity.INTENT_TO_MEDIAPLAYER_ACTIVITY_IMAGE_URL, GsonConverter.toJson(httpBeanMediaDetails.get(position)));
                         startActivity(intent);
                     }
                 });

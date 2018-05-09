@@ -45,7 +45,7 @@ public class WelcomeActivity extends BaseActivity {
         BmobQuery<HttpBeanMediaDetail> query = new BmobQuery<HttpBeanMediaDetail>();
         // 按时间降序查询
         query.order("-createdAt");
-        query.setLimit(10);
+        query.setLimit(50);
         query.findObjects(new FindListener<HttpBeanMediaDetail>() {
             @Override
             public void done(List<HttpBeanMediaDetail> list, BmobException e) {
