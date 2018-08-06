@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        Bmob.initialize(this, "e631674bb3e4f3725dcbef0a33376580");
+        Bmob.initialize(this, "32896c5e940df9a96201ab7ea3bfffe7");
         getGetWritePermission();
         btnLoginActivityLogin.setOnClickListener(new View.OnClickListener() {
             @Override

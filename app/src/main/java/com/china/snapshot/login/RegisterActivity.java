@@ -42,7 +42,7 @@ public class RegisterActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bmob.initialize(this, "e631674bb3e4f3725dcbef0a33376580");
+        Bmob.initialize(this, "32896c5e940df9a96201ab7ea3bfffe7");
         setContentView(R.layout.activity_student_regiest);
         ButterKnife.bind(this);
         btnRegisterActivitySubmit.setOnClickListener(new View.OnClickListener() {
