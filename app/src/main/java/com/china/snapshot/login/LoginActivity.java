@@ -2,19 +2,20 @@ package com.china.snapshot.login;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatButton;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.blankj.utilcode.constant.PermissionConstants;
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.PermissionUtils;
 import com.china.snapshot.R;
 import com.china.snapshot.activity.MainActivity;
+import com.china.snapshot.base.BaseActivity;
 
 import java.util.List;
 
@@ -28,14 +29,14 @@ import cn.bmob.v3.listener.SaveListener;
 /**
  * 登录
  */
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
     @BindView(R.id.editLoginActivityUsrName)
     EditText editLoginActivityUsrName;
     @BindView(R.id.editLoginActivityPassWord)
     EditText editLoginActivityPassWord;
     @BindView(R.id.btnLoginActivityLogin)
-    AppCompatButton btnLoginActivityLogin;
+    Button btnLoginActivityLogin;
     @BindView(R.id.tvLoginActivityRegister)
     TextView tvLoginActivityRegister;
     @BindView(R.id.llLoginActivityAll)
@@ -60,6 +61,27 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        editLoginActivityUsrName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                LogUtils.d("LoginActivity editLoginActivityUsrName  hasFocus = "+hasFocus);
+                if (hasFocus) {
+                    editLoginActivityUsrName.setCursorVisible(true);
+                }
+
+            }
+        });
+
+        editLoginActivityPassWord.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                LogUtils.d("LoginActivity editLoginActivityPassWord  hasFocus = "+hasFocus);
+                if (hasFocus) {
+                    editLoginActivityPassWord.setCursorVisible(true);
+                }
             }
         });
     }

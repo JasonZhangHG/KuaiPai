@@ -59,8 +59,9 @@
         <activity
             android:name=".login.RegisterActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".base.BaseBarActivity">
-        </activity>
+
+        <activity android:name=".base.BaseBarActivity"/>
+
         <activity
             android:name=".activity.FeedbackActivity"
             android:screenOrientation="portrait"

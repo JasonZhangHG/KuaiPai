@@ -320,6 +320,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.llMainDrawerLogin:
                 //登陆页
                 toActivity(LoginActivity.class);
+                BmobUser.logOut();   //清除缓存用户对象
                 closeDrawer();
                 finish();
                 break;

@@ -33,7 +33,7 @@
     <string name="video_manage">视频管理</string>
     <string name="select">选择</string>
     <string name="notification">消息通知</string>
-    <string name="log_in">登录</string>
+    <string name="log_in">退出</string>
     <string name="quit_app">再按一次，就会退出快拍</string>
 
 </resources>

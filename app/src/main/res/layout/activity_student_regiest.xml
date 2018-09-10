@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="注册"
+            android:text="注 册"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"/>
@@ -42,65 +42,56 @@
                 android:id="@+id/edtRegisterActivityUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@null"
                 android:hint="用户名"
                 android:maxLines="1"
                 android:singleLine="true"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/login_facebook_pressed"/>
 
             <EditText
                 android:id="@+id/edtRegisterActivityPassWord1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@null"
                 android:hint="密码"
                 android:maxLines="1"
                 android:singleLine="true"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/login_facebook_pressed"/>
 
             <EditText
                 android:id="@+id/edtRegisterActivityPassWord2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@null"
                 android:hint="再次输入密码"
                 android:maxLines="1"
                 android:singleLine="true"/>
 
-            <EditText
-                android:id="@+id/edtRegisterActivityName"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="姓名"
-                android:maxLines="1"
-                android:singleLine="true"/>
-
-            <EditText
-                android:id="@+id/edtRegisterActivityOld"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="年龄"
-                android:maxLines="1"
-                android:singleLine="true"/>
-
-
-            <EditText
-                android:id="@+id/edtRegisterActivityTel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="电话"
-                android:maxLines="1"
-                android:singleLine="true"/>
-
-            <EditText
-                android:id="@+id/edtRegisterActivityMail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="邮箱"
-                android:maxLines="1"
-                android:singleLine="true"/>
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/login_facebook_pressed"/>
 
             <Button
                 android:id="@+id/btnRegisterActivitySubmit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="50dp"
                 android:background="@drawable/btn_orange_selector"
                 android:text="注册"
                 android:textColor="@color/white"/>

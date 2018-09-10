@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue">
 
-    <TextView
+    <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center_horizontal"
-        android:text="快   拍"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:layout_height="56dp"
+        android:background="@color/blue"
+        app:contentInsetStart="0dp">
+
+        <TextView
+            android:id="@+id/tvRegisterActivityTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="登 录"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </android.support.v7.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/llLoginActivityAll"
@@ -34,30 +43,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:background="@null"
+            android:focusable="true"
             android:hint="用户名："
-            android:textColorHint="#cccccc"
             android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/login_facebook_pressed"/>
 
         <EditText
             android:id="@+id/editLoginActivityPassWord"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="30dp"
+            android:background="@null"
             android:hint="密码："
             android:inputType="textPassword"
             android:textColorHint="#cccccc"
             android:textSize="16sp"/>
 
-        <android.support.v7.widget.AppCompatButton
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/login_facebook_pressed"/>
+
+
+        <Button
             android:id="@+id/btnLoginActivityLogin"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/btn_login_sel"
             android:text="登录"
             android:textColor="@color/white"
             android:textSize="16sp"/>
-
 
         <TextView
             android:id="@+id/tvLoginActivityRegister"
