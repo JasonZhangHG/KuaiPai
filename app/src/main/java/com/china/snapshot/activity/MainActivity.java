@@ -133,6 +133,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     public void initRecyclerView() {
+
         httpBeanMediaDetails = DBHttpBeanMediaDetailUtils.getInstance().queryData();
         if (mainActivityAdapter == null) {
             final GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
